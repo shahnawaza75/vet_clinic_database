@@ -1,5 +1,6 @@
 /*Queries that provide answers to the questions from all projects.*/
 
+
 SELECT * from animals WHERE name LIKE '%mon';
 SELECT name from animals WHERE date_of_birth BETWEEN '2016-01-01' AND '2019-12-31';
 SELECT name from animals WHERE neutered = 't' AND escape_attempts < 3;
@@ -105,6 +106,7 @@ JOIN  animals ON   Owners.id = owner_id
 SELECT owners.full_name AS Owners,count(*) FROM owners
   JOIN  animals ON  owners.id = owner_id
   GROUP BY Owners ORDER BY count DESC LIMIT 1;
+
   
 -- Who was the last animal seen by William Tatcher?
 SELECT animals.name 
@@ -175,3 +177,6 @@ SELECT animals.name,date_of_birth,escape_attempts,neutered,weight_kg,species.nam
     JOIN visits ON animals.id  = visits.animals_id
     JOIN vets ON visits.vets_id = vets.id  WHERE vets.name = 'Maisy Smith'
     GROUP BY species.name ORDER BY number_of_visits DESC LIMIT 1;
+
+
+
