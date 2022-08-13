@@ -1,5 +1,6 @@
 /*Queries that provide answers to the questions from all projects.*/
 
+
 SELECT * from animals WHERE name LIKE '%mon';
 SELECT name from animals WHERE date_of_birth BETWEEN '2016-01-01' AND '2019-12-31';
 SELECT name from animals WHERE neutered = 't' AND escape_attempts < 3;
@@ -105,3 +106,4 @@ JOIN  animals ON   Owners.id = owner_id
 SELECT owners.full_name AS Owners,count(*) FROM owners
   JOIN  animals ON  owners.id = owner_id
   GROUP BY Owners ORDER BY count DESC LIMIT 1;
+
