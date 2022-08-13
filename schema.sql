@@ -11,3 +11,8 @@ CREATE TABLE animals (
     neutered BIT,
     weight_kg DECIMAL
 );
+
+ALTER TABLE
+    animals
+ADD
+    COLUMN species varchar;
